@@ -1,20 +1,27 @@
 import { hot } from "react-hot-loader/root";
 import React from "react";
 import styled from "styled-components";
+import { Reset } from "styled-reset";
 
-const MyStartApp = styled.div`
-  width: 50%;
-  min-width: 300px;
-  margin: 0 auto;
+import Resume from "./components/Resume";
+
+const MyApp = styled.div`
+  width: 100%;
+  min-width: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #222; /* fallback for old browsers */
+  background-repeat: no-repeat;
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.5rem;
 `;
 
 export default hot(() => {
   return (
-    <MyStartApp>
-      <h1>Hello!!</h1>
-    </MyStartApp>
+    <MyApp>
+      <Reset />
+      <Resume />
+    </MyApp>
   );
 });
