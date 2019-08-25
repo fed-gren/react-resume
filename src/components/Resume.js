@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { FaRegFilePdf } from "react-icons/fa";
 import config from "../config";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 import Contact from "./Contact";
 import Intro from "./Intro";
@@ -46,6 +48,8 @@ const Resume = styled.section`
 `;
 
 const ResumeMain = styled.main`
+  box-sizing: border-box;
+
   h1 {
     font-weight: 100;
     font-size: 4rem;
@@ -66,11 +70,34 @@ const ResumeMain = styled.main`
   }
 `;
 
+const printDocument = _ => {
+  const input = document.querySelector(".resume_main");
+  html2canvas(input).then(canvas => {
+    const imgData = canvas.toDataURL("image/png");
+    let imgWidth = 210;
+    let pageHeight = 295;
+    let imgHeight = (canvas.height * imgWidth) / canvas.width;
+    let heightLeft = imgHeight;
+    let doc = new jsPDF("p", "mm");
+    let position = 0;
+    doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+    heightLeft -= pageHeight;
+
+    while (heightLeft >= 0) {
+      position = heightLeft - imgHeight;
+      doc.addPage();
+      doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+    }
+    doc.save(`${config.contact.name}_resume.pdf`);
+  });
+};
+
 export default () => {
   return (
-    <Resume>
+    <Resume className="resume_main">
       <header>
-        <FaRegFilePdf title="pdf로 저장하기" />
+        <FaRegFilePdf title="pdf로 저장하기" onClick={printDocument} />
       </header>
       <ResumeMain>
         <h1>안녕하세요.</h1>
