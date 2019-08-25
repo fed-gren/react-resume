@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { FaRegFilePdf } from "react-icons/fa";
 import config from "../config";
 
+import Contact from "./Contact";
 import Intro from "./Intro";
-import Links from "./Links";
+import TechStack from "./TechStack";
 
 const Resume = styled.section`
   border: 1px solid darkgray;
@@ -76,23 +77,9 @@ export default () => {
         <h3>
           “<span className="fe">프론트엔드</span>” 개발자 이은빈 입니다.
         </h3>
+        <Contact />
         <Intro />
-        <Links />
-        {/* <article className="links">
-          <div>
-            <h4>
-              Github
-              <FaGithub />
-            </h4>
-            <a href="https://github.com/fed-gren">
-              https://github.com/fed-gren
-            </a>
-          </div>
-          <div>
-            <h4>Email</h4>
-            <p>deveb22@gmail.com</p>
-          </div>
-        </article> */}
+        <TechStack />
         <article>
           기술 경험 (배포 주소 남기기) 후보들
           <div>

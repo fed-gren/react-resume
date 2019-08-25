@@ -8,14 +8,13 @@ import {
   FaSass
 } from "react-icons/fa";
 import { DiGit, DiVisualstudio, DiResponsive } from "react-icons/di";
+
+import ContentsLayout from "./ContentsLayout";
 import config from "../config";
 
 const TechStack = styled.div`
-  padding: 1rem 0;
-
   p {
     padding: 0.2rem;
-    margin: 0.4rem 0;
   }
 `;
 
@@ -27,23 +26,27 @@ const Icons = styled.div`
   padding-bottom: 1rem;
 `;
 
+const joinTechStack = arr => arr.join(", ");
+
 export default () => {
   return (
-    <TechStack>
-      <Icons>
-        <FaJsSquare color={config.iconColors.javascript} />
-        <FaReact color={config.iconColors.react} />
-        <FaHtml5 color={config.iconColors.html5} />
-        <FaCss3Alt color={config.iconColors.css3} />
-        <FaSass color={config.iconColors.sass} />
-        <DiResponsive />
-        <DiGit color={config.iconColors.git} />
-        <DiVisualstudio color={config.iconColors.vscode} />
-      </Icons>
-      <p>JavaScript , React</p>
-      <p>HTML , CSS , Sass , 반응형 웹</p>
-      <p>Git , VSCode</p>
-      <p>Jest</p>
-    </TechStack>
+    <ContentsLayout title="Tech stack">
+      <TechStack>
+        <Icons>
+          <FaJsSquare color={config.iconColors.javascript} />
+          <FaReact color={config.iconColors.react} />
+          <FaHtml5 color={config.iconColors.html5} />
+          <FaCss3Alt color={config.iconColors.css3} />
+          <FaSass color={config.iconColors.sass} />
+          <DiResponsive />
+          <DiGit color={config.iconColors.git} />
+          <DiVisualstudio color={config.iconColors.vscode} />
+        </Icons>
+        <p>{joinTechStack(config.techStack.javascript)}</p>
+        <p>{joinTechStack(config.techStack.markup)}</p>
+        <p>{joinTechStack(config.techStack.devops)}</p>
+        <p>{joinTechStack(config.techStack.tool)}</p>
+      </TechStack>
+    </ContentsLayout>
   );
 };
