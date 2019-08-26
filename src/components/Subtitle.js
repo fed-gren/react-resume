@@ -5,7 +5,7 @@ const Subtitle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 8rem;
+  width: 10rem;
   color: #333;
   flex-shrink: 0;
   flex-grow: 0;
