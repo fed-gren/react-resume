@@ -6,7 +6,7 @@ import config from "../config";
 export default () => {
   return (
     <ContentsLayout title="Intro">
-      <div>{config.intro.message}</div>
+      <pre>{config.intro.message}</pre>
     </ContentsLayout>
   );
 };

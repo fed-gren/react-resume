@@ -8,6 +8,7 @@ import jsPDF from "jspdf";
 import Contact from "./Contact";
 import Intro from "./Intro";
 import TechStack from "./TechStack";
+import TechExp from "./TechExp";
 
 const Resume = styled.section`
   border: 1px solid darkgray;
@@ -78,15 +79,24 @@ const printDocument = _ => {
     let pageHeight = 295;
     let imgHeight = (canvas.height * imgWidth) / canvas.width;
     let heightLeft = imgHeight;
-    let doc = new jsPDF("p", "mm");
+    let doc = new jsPDF("p", "mm", "a4", true);
     let position = 0;
-    doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+    doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight, "", "FAST");
     heightLeft -= pageHeight;
 
     while (heightLeft >= 0) {
       position = heightLeft - imgHeight;
       doc.addPage();
-      doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      doc.addImage(
+        imgData,
+        "PNG",
+        0,
+        position,
+        imgWidth,
+        imgHeight,
+        "",
+        "FAST"
+      );
       heightLeft -= pageHeight;
     }
     doc.save(`${config.contact.name}_resume.pdf`);
@@ -107,6 +117,7 @@ export default () => {
         <Contact />
         <Intro />
         <TechStack />
+        <TechExp />
         <article>
           기술 경험 (배포 주소 남기기) 후보들
           <div>
