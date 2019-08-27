@@ -12,11 +12,11 @@ import TechExp from "./TechExp";
 
 const Resume = styled.section`
   border: 1px solid darkgray;
-  width: 65%;
+  width: 70%;
   margin: 2rem auto;
   background-color: #eee;
   border-radius: 0.4rem;
-  padding: 2rem 2rem;
+  padding: 2rem 2.5rem;
   -webkit-box-shadow: 0px 39px 41px 3px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0px 39px 41px 3px rgba(0, 0, 0, 0.6);
   box-shadow: 0px 39px 41px 3px rgba(0, 0, 0, 0.6);
@@ -118,18 +118,6 @@ export default () => {
         <Intro />
         <TechStack />
         <TechExp />
-        <article>
-          기술 경험 (배포 주소 남기기) 후보들
-          <div>
-            React 타자연습 : 나에게 필요한 무언가를 만들어본 경험. 리액트로 처음
-            만들어본 웹 애플리케이션
-          </div>
-          <div>Amazon clone : carousel, 자동완성 등의 UI 만들어 본 경험</div>
-          <div>
-            Array parser : parsing 과정에 대한 이해, tree 구조에 대한 이해
-          </div>
-          <div>my-react-starter : webpack, babel 사용법에 대한 공부</div>
-        </article>
         <article>
           기간, 과정명, 수료 여부
           <p>

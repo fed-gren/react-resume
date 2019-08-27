@@ -4,6 +4,7 @@ import config from "../config";
 
 import ContentsLayout from "./ContentsLayout";
 import TechExpLayout from "./TechExpLayout";
+import { Styled } from "./styles";
 
 const Exp = styled.div`
   display: flex;
@@ -14,9 +15,9 @@ export default () => {
   return (
     <ContentsLayout title="Tech exp.">
       <Exp>
-        {config.techExp.map(el => (
-          <TechExpLayout title={el.title} url={el.url}>
-            <p>{el.contents}</p>
+        {config.techExp.map(({ title, url, contents }) => (
+          <TechExpLayout title={title} url={url} key={title}>
+            <Styled.Pre>{contents}</Styled.Pre>
           </TechExpLayout>
         ))}
       </Exp>
