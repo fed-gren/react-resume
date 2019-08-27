@@ -9,6 +9,7 @@ import Contact from "./Contact";
 import Intro from "./Intro";
 import TechStack from "./TechStack";
 import TechExp from "./TechExp";
+import Career from "./Career";
 
 const Resume = styled.section`
   border: 1px solid darkgray;
@@ -118,6 +119,7 @@ export default () => {
         <Intro />
         <TechStack />
         <TechExp />
+        <Career />
         <article>
           기간, 과정명, 수료 여부
           <p>

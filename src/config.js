@@ -42,5 +42,16 @@ export default {
       url: "#",
       contents: `프로젝트 시 자주 사용할 기본 환경 설정. Webpack, Babel의 사용 이유와 사용법 등에 대해 익힘.`
     }
+  ],
+  career: [
+    {
+      title: "오피트 정보통신",
+      start: "2017.01",
+      end: "2018.11",
+      contents: [
+        "펌웨어 개발 및 유지보수 - C언어",
+        "Windows application 유지 보수 - C#"
+      ]
+    }
   ]
 };
