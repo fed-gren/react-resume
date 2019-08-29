@@ -11,6 +11,33 @@ import TechStack from "./TechStack";
 import TechExp from "./TechExp";
 import Career from "./Career";
 import Education from "./Education";
+import CoverLetter from "./CoverLetter";
+
+export default () => {
+  return (
+    <Resume className="resume_main">
+      <header>
+        <FaRegFilePdf title="pdf로 저장하기" onClick={printDocument} />
+      </header>
+      <ResumeMain>
+        <h1>안녕하세요.</h1>
+        <h3>
+          “<span className="fe">프론트엔드</span>” 개발자 이은빈 입니다.
+        </h3>
+        <Contact />
+        <Intro />
+        <TechStack />
+        <TechExp />
+        <Education />
+        <Career />
+        <CoverLetter />
+      </ResumeMain>
+      <footer>
+        <p>끝까지 읽어주셔서 감사합니다.</p>
+      </footer>
+    </Resume>
+  );
+};
 
 const Resume = styled.section`
   border: 1px solid darkgray;
@@ -103,29 +130,4 @@ const printDocument = _ => {
     }
     doc.save(`${config.contact.name}_resume.pdf`);
   });
-};
-
-export default () => {
-  return (
-    <Resume className="resume_main">
-      <header>
-        <FaRegFilePdf title="pdf로 저장하기" onClick={printDocument} />
-      </header>
-      <ResumeMain>
-        <h1>안녕하세요.</h1>
-        <h3>
-          “<span className="fe">프론트엔드</span>” 개발자 이은빈 입니다.
-        </h3>
-        <Contact />
-        <Intro />
-        <TechStack />
-        <TechExp />
-        <Education />
-        <Career />
-      </ResumeMain>
-      <footer>
-        <p>끝까지 읽어주셔서 감사합니다.</p>
-      </footer>
-    </Resume>
-  );
 };
