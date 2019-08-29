@@ -10,6 +10,7 @@ import Intro from "./Intro";
 import TechStack from "./TechStack";
 import TechExp from "./TechExp";
 import Career from "./Career";
+import Education from "./Education";
 
 const Resume = styled.section`
   border: 1px solid darkgray;
@@ -119,18 +120,8 @@ export default () => {
         <Intro />
         <TechStack />
         <TechExp />
+        <Education />
         <Career />
-        <article>
-          기간, 과정명, 수료 여부
-          <p>
-            교육 : 코드스쿼드 과정 수료
-            https://codesquad.kr/page/masters/fe.html
-          </p>
-          <p>전자공학부 졸업</p>
-        </article>
-        <article>
-          <p>deveb22@gmail.com</p>
-        </article>
       </ResumeMain>
       <footer>
         <p>끝까지 읽어주셔서 감사합니다.</p>

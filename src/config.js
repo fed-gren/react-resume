@@ -53,5 +53,24 @@ export default {
         "Windows application 유지 보수 - C#"
       ]
     }
+  ],
+  education: [
+    {
+      title:
+        "코드 스쿼드 웹 프론트엔드 과정 (https://codesquad.kr/page/masters/fe.html)",
+      start: "2019.04",
+      end: "",
+      contents: [
+        "웹 프론트엔드 개발의 전반적인 내용을 배움.",
+        "가독성이 좋은 코드, 유지보수 하기 좋은 코드 등에 대해 배움."
+      ]
+    }
+  ],
+  coverLetter: [
+    {
+      title: "프론트엔드 개발자가 되고 싶은 이유",
+      contents:
+        "본인! 사용자 편의를 위한 개발이 너무 재밌었음!! 꼭하고싶음~! 퇴사까지 했는데 그 이후로 마음 흔들린적 단한번도 없다 이말이야!"
+    }
   ]
 };
