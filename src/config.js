@@ -32,13 +32,13 @@ export default {
   techExp: [
     {
       title: "Array parser 구현",
-      githubUrl: "#",
+      githubUrl: "https://github.com/fed-gren/javascript-json/tree/fed-gren",
       contents:
         "Array parser를 구현하며 트리 구조의 이해와 스택, 큐 등의 자료구조에 대한 공부"
     },
     {
       title: "Amazon UI Clone",
-      githubUrl: "#",
+      githubUrl: "https://github.com/fed-gren/javascript-amazon/tree/fed-gren",
       demoUrl: "https://gren-amazon.herokuapp.com/",
       contents: `Amazon 웹 사이트에 있는 Carousel, 자동 완성 검색 UI clone. (자동 완성은 mock 데이터로 'z', 'x', 'c'를 입력 시에만 목록이보입니다.)`
     },
