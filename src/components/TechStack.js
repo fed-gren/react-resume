@@ -30,7 +30,7 @@ const joinTechStack = arr => arr.join(", ");
 
 export default () => {
   return (
-    <ContentsLayout title="Tech stack">
+    <ContentsLayout title="기술 스택">
       <TechStack>
         <Icons>
           <FaJsSquare color={config.iconColors.javascript} />

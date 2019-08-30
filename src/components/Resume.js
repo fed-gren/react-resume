@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { FaRegFilePdf } from "react-icons/fa";
 import config from "../config";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+import { printDocument } from "../utils";
 
 import Contact from "./Contact";
+import Link from "./Link";
 import Intro from "./Intro";
 import TechStack from "./TechStack";
 import TechExp from "./TechExp";
@@ -22,10 +22,12 @@ export default () => {
       <ResumeMain>
         <h1>안녕하세요.</h1>
         <h3>
-          “<span className="fe">프론트엔드</span>” 개발자 이은빈 입니다.
+          <p>JavaScript, React를 좋아하는</p>“
+          <span className="fe">프론트엔드</span>” 개발자 이은빈 입니다.
         </h3>
         <Contact />
-        <Intro />
+        <Link />
+        {/* <Intro /> */}
         <TechStack />
         <TechExp />
         <Education />
@@ -92,6 +94,9 @@ const ResumeMain = styled.main`
     font-size: 1.7rem;
     padding: 1.5rem 0;
     color: #333;
+    & > p {
+      margin-bottom: 0.5rem;
+    }
   }
 
   .fe {
@@ -99,35 +104,3 @@ const ResumeMain = styled.main`
     transition: 0.8s color;
   }
 `;
-
-const printDocument = _ => {
-  const input = document.querySelector(".resume_main");
-  html2canvas(input).then(canvas => {
-    const imgData = canvas.toDataURL("image/png");
-    let imgWidth = 210;
-    let pageHeight = 295;
-    let imgHeight = (canvas.height * imgWidth) / canvas.width;
-    let heightLeft = imgHeight;
-    let doc = new jsPDF("p", "mm", "a4", true);
-    let position = 0;
-    doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight, "", "FAST");
-    heightLeft -= pageHeight;
-
-    while (heightLeft >= 0) {
-      position = heightLeft - imgHeight;
-      doc.addPage();
-      doc.addImage(
-        imgData,
-        "PNG",
-        0,
-        position,
-        imgWidth,
-        imgHeight,
-        "",
-        "FAST"
-      );
-      heightLeft -= pageHeight;
-    }
-    doc.save(`${config.contact.name}_resume.pdf`);
-  });
-};

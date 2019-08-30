@@ -45,14 +45,24 @@ const LinkButton = styled.button`
   height: 2rem;
 `;
 
-export default function TechExpContents({ title, url, children }) {
+export default function TechExpContents({
+  title,
+  githubUrl,
+  children,
+  demoUrl
+}) {
   return (
     <ExpContents>
       <ExpTitle>
         <h4>{title}</h4>
-        <a href={url} target="_blank" rel="noopener noreferrer">
+        <a href={githubUrl} target="_blank" rel="noopener noreferrer">
           <LinkButton>Github</LinkButton>
         </a>
+        {demoUrl && (
+          <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+            <LinkButton>Demo</LinkButton>
+          </a>
+        )}
       </ExpTitle>
       {children}
     </ExpContents>

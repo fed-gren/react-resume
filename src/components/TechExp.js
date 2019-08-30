@@ -13,10 +13,15 @@ const Exp = styled.div`
 
 export default () => {
   return (
-    <ContentsLayout title="Tech exp.">
+    <ContentsLayout title="경험">
       <Exp>
-        {config.techExp.map(({ title, url, contents }) => (
-          <TechExpLayout title={title} url={url} key={title}>
+        {config.techExp.map(({ title, githubUrl, demoUrl, contents }) => (
+          <TechExpLayout
+            title={title}
+            githubUrl={githubUrl}
+            demoUrl={demoUrl}
+            key={title}
+          >
             <Styled.Pre>{contents}</Styled.Pre>
           </TechExpLayout>
         ))}

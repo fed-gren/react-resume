@@ -16,17 +16,25 @@ const CoverLetter = styled.div`
   & h4 {
     font-weight: 600;
     color: #333;
+    margin-bottom: 0.4rem;
+  }
+
+  & em {
+    font-weight: 600;
+    color: #333;
   }
 `;
 
 export default () => {
   return (
-    <ContentsLayout title="자기소개서">
+    <ContentsLayout title="생각">
       <CoverLetter>
-        {config.education.map(({ title, contents }) => (
+        {config.coverLetter.map(({ title, contents }) => (
           <div key={title}>
             <h4>{title}</h4>
-            <Styled.Pre>{contents}</Styled.Pre>
+            <Styled.Pre
+              dangerouslySetInnerHTML={{ __html: contents }}
+            ></Styled.Pre>
           </div>
         ))}
       </CoverLetter>

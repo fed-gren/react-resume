@@ -26,7 +26,7 @@ const Career = styled.div`
 
 export default () => {
   return (
-    <ContentsLayout title="Career">
+    <ContentsLayout title="경력">
       <Career>
         {config.career.map(({ title, start, end, contents }) => (
           <div key={title}>
