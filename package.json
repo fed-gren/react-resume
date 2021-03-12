@@ -35,7 +35,7 @@
     "@babel/runtime": "^7.5.5",
     "@hot-loader/react-dom": "^16.9.0",
     "html2canvas": "^1.0.0-rc.3",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "react-hot-loader": "^4.12.11",
     "react-icons": "^3.7.0",
     "styled-components": "^4.3.2",
